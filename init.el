@@ -4,6 +4,7 @@
 (setq inhibit-splash-screen t)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'load-path "~/.emacs.d/lisp/lua-mode")
 
 ;; Load cmake only on OSX. I don't really use it on Linux
 (if (eq system-type 'darwin)
@@ -39,6 +40,11 @@
 
 ;;;;org-mode configuration
 ;; Make org-mode work with files ending in .org
-(add-to-list 'auto-mode-alist '("\\.org\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 ;; The above is the default in recent emacsen
 
+
+;;;; lua-mode configuration
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))

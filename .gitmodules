@@ -1,0 +1,3 @@
+[submodule "lisp/lua-mode"]
+	path = lisp/lua-mode
+	url = git@github.com:zulusw/lua-mode.git
